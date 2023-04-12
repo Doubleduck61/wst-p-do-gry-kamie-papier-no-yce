@@ -1,0 +1,25 @@
+import random
+def coin_flip():
+    """Randomly return 'kamień' or 'papier' or 'nożyce'."""
+    if random.randint(0,2) == 0:
+        return "kamień"
+    elif random.randint(0,2) == 1:
+        return "papier"
+    elif random.randint(0,2) == 2:
+        return "nożyce"
+        
+kamień_tally = 0
+papier_tally = 0
+nożyce_tally = 0
+
+for trial in range(10_000):
+    if coin_flip() == "kamień":
+        kamień_tally += 1
+    elif coin_flip() == "papier":
+        papier_tally += 1
+    elif coin_flip() == "nożyce":
+        nożyce_tally += 1
+        
+print(kamień_tally)
+print(papier_tally)
+print(nożyce_tally)
